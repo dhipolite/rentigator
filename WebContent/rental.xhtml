@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">My Rentals</ui:define>
+                
+    <ui:define name="head">
+        <style type="text/css">
+            .ui-steps .ui-steps-item {
+                width: 25%;
+            }
+        </style>
+    </ui:define>
+    
+    <ui:define name="breadcrumb">
+        <li><p:link outcome="/rental">My Rentals</p:link></li>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+        	<div class="ui-g " style="display: flex; align-items: top;">
+			    <div class="ui-g-3 ui-g-nopad">
+			    	<p:tabMenu>
+	                        <p:menuitem value="RENTAL" outcome="/rental" />
+			    	</p:tabMenu>
+			    	<p:dataTable var="car" value="#{dtBasicView.cars}" selectionMode="single" rowKey="#{car.id}" reflow="true" rowspan="2" style="text-align: center;">
+                          <p:column>
+                              <h:outputText value="#{car.id}" />
+                          </p:column>
+                      </p:dataTable>
+			    </div>
+			    <div class="ui-g-9 ui-g-nopad">
+			        <div class="ui-g-16">
+				    	<p:tabMenu activeIndex="#{param.i}">
+	                        <p:menuitem value="EXPENSES" outcome="/rental-pages/expense-view" icon="fa fa-money">
+	                            <f:param name="i" value="0" />
+	                        </p:menuitem>
+	                        <p:menuitem value="LEASE" outcome="/rental-pages/lease-view" icon="fa fa-legal">
+	                            <f:param name="i" value="1" />
+	                        </p:menuitem>
+	                        <p:menuitem value="MAINTAINABLES" outcome="/rental-pages/item-view" icon="fa fa-cubes">
+	                            <f:param name="i" value="2" />
+	                        </p:menuitem>
+	                        <p:menuitem value="REMINDERS" outcome="/rental-pages/reminder-view" icon="fa fa-calendar-o">
+	                            <f:param name="i" value="3" />
+	                        </p:menuitem>
+	                    </p:tabMenu>
+	                    <div class="ui-g-16 ui-g-nopad">
+		                    <ui:insert name="sub-content"/>
+		                </div>
+			        </div>
+			    </div>
+			</div>
+        </h:form>
+            
+    </ui:define>
+
+</ui:composition>

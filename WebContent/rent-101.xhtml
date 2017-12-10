@@ -1,0 +1,154 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Renting 101</ui:define>
+    
+    <ui:define name="breadcrumb">
+        <li><p:link outcome="/rent-101">Renting 101</p:link></li>
+    </ui:define>
+
+    <ui:define name="head">
+           <script type="text/javascript">
+               //<![CDATA[
+               function skinBar() {
+                   this.cfg.shadow = false;
+                   this.cfg.title = '';
+                   this.cfg.seriesColors = ['#00bcd4', '#cddc39'];
+                   this.cfg.grid = {
+                       background: '#ffffff',
+                       borderColor: '#ffffff',
+                       gridLineColor: '#EEEEEE',
+                       shadow: false
+                   };
+                   this.cfg.axesDefaults = {
+                       borderWidth: 0.1,
+                       borderColor: 'dce2e7',
+                       rendererOptions: {
+                           textColor: '#212121'
+                       }
+                   };
+                   this.cfg.seriesDefaults = {
+                       shadow: false,
+                       lineWidth: 1,
+                       renderer: $.jqplot.BarRenderer,
+                       markerOptions: {
+                           shadow: false,
+                           size: 7,
+                           style: 'circle'
+                       }
+                   }
+               }
+               //]]>
+           </script>
+           <style type="text/css">
+               .main-content {
+                   padding: 0;
+               }
+           </style>
+       </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Renting 101</h1>
+                    <p>Rental savvy begins here.</p>
+                    <hr />
+                    <br /> <br />
+                </div>
+        	</div>
+        </div>
+        <div class="ui-g dashboard">
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/articles/town.jfif" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="https://www.gobankingrates.com/saving-money/surprise-savings-account-wont-cover-cost-renting-apartment/" target="_blank">Expenses to Plan For</a></h3>
+                            <span class="image-box-tag">article</span>
+                            <p>
+                                To successfully leave the nest and rent your own apartment, you need to account for many sneaky expenses that occur up front; it doesn’t end with a security deposit and first month’s rent.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/articles/tech.jfif" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="https://www.investopedia.com/articles/personal-finance/090315/millennials-guide-how-read-lease.asp" target="_blank">Parsing a Lease</a></h3>
+                            <span class="image-box-tag">article</span>
+                            <p>
+                                Reading a lease an be befuddling, and often the first impulse is to just go ahead and sign the thing. Don't.
+                                Before you sign, take the time to read the entire document.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/articles/people.jfif" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="https://www.apartmentguide.com/blog/apartment-application-items-you-need/" target="_blank">General Application Process</a></h3>
+                            <span class="image-box-tag">article</span>
+                            <p>
+                                Are you asking, “What do I need to rent an apartment?” 
+                                Like a job application, an apartment application requires you to attach additional documents. 
+                                Simply filling out the form with your information and a list of past apartments isn’t enough for the landlord to decide whether you’re reliable as a tenant. 
+                                As such, he or she will ask for more items that will show that you’re on top of your game.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/articles/spectacles.jfif" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="http://time.com/money/4024754/renters-guide-inspect-apartment/" target="_blank">Moving In</a></h3>
+                            <span class="image-box-tag">article</span>
+                            <p>
+                                Move-in inspections are very important for both tenants and landlords to document the condition of the rental and compare to damages caused later on.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/articles/table-chairs.jfif" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="https://www.wikihow.com/Find-a-Good-Roommate" target="_blank">Finding a Roommate</a></h3>
+                            <span class="image-box-tag">article</span>
+                            <p>
+                                Finding a roommate can be tough and sometimes feel overwhelming. 
+                                Whether you're looking for a place to live or seeking someone to live with you, it's important to find a compatible match. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </ui:define>
+
+</ui:composition>

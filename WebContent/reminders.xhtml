@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="breadcrumb">
+        <li><p:link outcome="/reminders">Reminders</p:link></li>
+    </ui:define>
+
+    <ui:define name="content">        
+        <h:form>
+        	<div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="card card-w-title">
+                        <h1>Reminders</h1>
+                    	<p>Keep yourself in-the-loop; future you will be thankful.</p>
+                    	<hr />
+                    	<br /> <br />
+                    	<p:commandButton type="button" value="New Reminder" icon="ui-icon-plus" style="display: block;" />
+                    	<br />
+                        <p:schedule id="schedule" value="#{scheduleView.eventModel}"/>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

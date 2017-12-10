@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="breadcrumb">
+        <li><p:link outcome="/contract">Roommate Contract</p:link></li>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Roommate Contract</h1>
+                    <p>Define and communicate expectations in the beginning.</p>
+                    <hr />
+                    <br /> <br />
+                    <h:form id="contractFrm">
+                        <p:dataTable var="car" value="#{dtBasicView.cars}" selectionMode="single" rowKey="#{car.id}" reflow="true" style="margin-bottom:20px">
+                            <f:facet name="header">
+                                <p:commandButton type="button" value="New Contract" icon="ui-icon-plus" style="display: block;" />
+                            </f:facet>
+                            <p:column headerText="Year" sortBy="#{car.year}">
+                                <h:outputText value="#{car.year}" />
+                            </p:column>
+
+                            <p:column headerText="Brand" sortBy="#{car.brand}">
+                                <h:outputText value="#{car.brand}" />
+                            </p:column>
+
+                            <p:column headerText="Color" sortBy="#{car.color}">
+                                <h:outputText value="#{car.color}" />
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+        </div>
+        
+        </div>
+    </ui:define>
+
+</ui:composition>

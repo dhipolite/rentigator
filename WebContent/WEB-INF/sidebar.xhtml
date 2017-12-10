@@ -1,0 +1,41 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pm="http://primefaces.org/serenity">
+
+    <div class="layout-sidebar #{guestPreferences.darkMenu ? 'layout-sidebar-dark' : ''}">
+        <div class="sidebar-logo">
+            <a href="home.xhtml">
+                <p:graphicImage name="images/logo-rg-full-white.png" library="serenity-layout" />
+                <!-- <span class="app-name">RENTIGATOR</span> -->
+            </a>
+            <a href="#" class="sidebar-anchor" title="Toggle Menu"></a>
+        </div>
+
+        <div class="nano">
+            <div class="nano-content sidebar-scroll-content">
+                <div class="layout-menu-container">
+                    <h:form id="menuform">
+                        <pm:menu>
+                            <p:menuitem id="sr_myRentals" value="My Rentals" icon="&#xe0da;" outcome="/rental"/>
+                            <p:submenu id="sr_stayInformed" label="Stay Informed" icon="&#xe02f;" >
+                                <p:menuitem id="sr_tenantRights" value="Tenant Rights" icon="&#xe8e8;" outcome="/tenant-rights" ajax="false"/>
+                                <p:menuitem id="sr_rent101" value="Renting 101" icon="&#xe869;" outcome="/rent-101" ajax="false"/>
+                            </p:submenu>
+                            <p:submenu id="sr_evals" label="Evaluations" icon="&#xE880;">
+                                <p:menuitem id="sr_Inspections" value="Unit Inspections" icon="&#xe8b2;" outcome="/inspections"/>
+                                <p:menuitem id="sr_RmmtQtnr" value="Questionnaire" icon="&#xe8af;" outcome="/questionnaire" />
+                                <p:menuitem id="sr_RmmtContract" value="Roommate Contract" icon="&#xe85d;" outcome="/contract" />
+                            </p:submenu>
+                            <p:menuitem id="sr_reminders" value="Reminders" icon="&#xe614;" outcome="/reminders" />
+                        </pm:menu>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ui:composition>

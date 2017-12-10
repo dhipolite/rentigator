@@ -1,0 +1,90 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="breadcrumb">
+        <li><p:link outcome="/tenant-rights">Tenant Rights</p:link></li>
+    </ui:define>
+
+    <ui:define name="head">
+           <script type="text/javascript">
+               //<![CDATA[
+               function skinBar() {
+                   this.cfg.shadow = false;
+                   this.cfg.title = '';
+                   this.cfg.seriesColors = ['#00bcd4', '#cddc39'];
+                   this.cfg.grid = {
+                       background: '#ffffff',
+                       borderColor: '#ffffff',
+                       gridLineColor: '#EEEEEE',
+                       shadow: false
+                   };
+                   this.cfg.axesDefaults = {
+                       borderWidth: 0.1,
+                       borderColor: 'dce2e7',
+                       rendererOptions: {
+                           textColor: '#212121'
+                       }
+                   };
+                   this.cfg.seriesDefaults = {
+                       shadow: false,
+                       lineWidth: 1,
+                       renderer: $.jqplot.BarRenderer,
+                       markerOptions: {
+                           shadow: false,
+                           size: 7,
+                           style: 'circle'
+                       }
+                   }
+               }
+               //]]>
+           </script>
+           <style type="text/css">
+               .main-content {
+                   padding: 0;
+               }
+           </style>
+       </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Tenant Rights</h1>
+                    <p>Find tenant-landlord rights by clicking on your state of residence.</p>
+                    <hr />
+                    <br /> <br />
+                </div>
+            </div>
+        </div>
+        <div class="ui-g dashboard">
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/states/california.png" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="http://www.dca.ca.gov/publications/landlordbook/index.shtml" target="_blank">California</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-4 ui-g-nopad">
+                <div class="ui-g-12 image-box">
+                    <div class="card">
+                        <p:graphicImage name="images/states/virginia.png" library="serenity-layout" />
+
+                        <div class="image-box-content">
+                            <h3><a href="http://www.dhcd.virginia.gov/index.php/dhcd-resources/landlord-tenant-handbook.html" target="_blank">Virginia</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>
